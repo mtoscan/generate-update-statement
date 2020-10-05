@@ -54,7 +54,7 @@ I'm using Jest to run the tests. You can read more about setting up your tests [
 ### List of changes or Improvements pending
 - More unit test cases
 - Add environment variables
-- Config serverles to deploy to AWS
+- Config serverless to deploy to AWS
 
 ### Postman File
 You can import the file `Backend_Take_Home.postman_collection.json` in your postman app. You will find a collection of post request using the same data used in the test cases. Is required to simulate the API Gateway locally with serverless offline.
