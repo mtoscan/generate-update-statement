@@ -1,0 +1,105 @@
+{
+	"info": {
+		"_postman_id": "087ea70e-31ff-4b3b-87bd-249fb8560424",
+		"name": "AspireIQ: Backend Take Home",
+		"description": "Backend Take Home: Subdocument Array Mutation - Prompt",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Add Mutations",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"document\": {\n        \"_id\": 1,\n        \"name\": \"Johnny Content Creator\",\n        \"posts\": [\n            {\n                \"_id\": 2,\n                \"value\": \"one\",\n                \"mentions\": []\n            },\n            {\n                \"_id\": 3,\n                \"value\": \"two\",\n                \"mentions\": [\n                    {\n                    \"_id\": 5,\n                    \"text\": \"apple\"\n                    },\n                    {\n                    \"_id\": 6,\n                    \"text\": \"orange\"\n                    }\n                ]\n            },\n            {\n                \"_id\": 4,\n                \"value\": \"three\",\n                \"mentions\": []\n            }\n        ]\n    },\n    \"mutations\": [\n        {\n            \"posts\": [\n            {\n                \"value\": \"four\"\n            }\n            ]\n        },\n        {\n            \"posts\": [\n            {\n                \"_id\": 3,\n                \"mentions\": [\n                {\n                    \"text\": \"banana\"\n                }\n                ]\n            }\n            ]\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/statement",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"statement"
+					]
+				},
+				"description": "Test generateUpdateStatement API with add Mutations"
+			},
+			"response": []
+		},
+		{
+			"name": "Update Mutations",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"document\": {\n        \"_id\": 1,\n        \"name\": \"Johnny Content Creator\",\n        \"posts\": [\n            {\n                \"_id\": 2,\n                \"value\": \"one\",\n                \"mentions\": []\n            },\n            {\n                \"_id\": 3,\n                \"value\": \"two\",\n                \"mentions\": [\n                    {\n                    \"_id\": 5,\n                    \"text\": \"apple\"\n                    },\n                    {\n                    \"_id\": 6,\n                    \"text\": \"orange\"\n                    }\n                ]\n            },\n            {\n                \"_id\": 4,\n                \"value\": \"three\",\n                \"mentions\": []\n            }\n        ]\n    },\n    \"mutations\": [\n        {\n            \"posts\": [\n            {\n                \"_id\": 2,\n                \"value\": \"too\"\n            }\n            ]\n        },\n        {\n            \"posts\": [\n            {\n                \"_id\": 3,\n                \"mentions\": [\n                {\n                    \"_id\": 5,\n                    \"text\": \"pear\"\n                }\n                ]\n            }\n            ]\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/statement",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"statement"
+					]
+				},
+				"description": "Test generateUpdateStatement API with update mutations"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Mutations",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"document\": {\n        \"_id\": 1,\n        \"name\": \"Johnny Content Creator\",\n        \"posts\": [\n            {\n                \"_id\": 2,\n                \"value\": \"one\",\n                \"mentions\": []\n            },\n            {\n                \"_id\": 3,\n                \"value\": \"two\",\n                \"mentions\": [\n                    {\n                    \"_id\": 5,\n                    \"text\": \"apple\"\n                    },\n                    {\n                    \"_id\": 6,\n                    \"text\": \"orange\"\n                    }\n                ]\n            },\n            {\n                \"_id\": 4,\n                \"value\": \"three\",\n                \"mentions\": []\n            }\n        ]\n    },\n    \"mutations\": [\n        {\n            \"posts\": [\n            {\n                \"_id\": 2,\n                \"_delete\": true\n            }\n            ]\n        },\n        {\n            \"posts\": [\n            {\n                \"_id\": 3,\n                \"mentions\": [\n                {\n                    \"_id\": 6,\n                    \"_delete\": true\n                }\n                ]\n            }\n            ]\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/statement",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"statement"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Mutations With Other Structure",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"document\": {\n        \"_id\": 1,\n        \"name\": \"Site Name\",\n        \"menu\": [\n            {\n                \"_id\": 2,\n                \"name\": \"Dashboard\",\n                \"pages\": [\n                    {\n                        \"_id\": 3,\n                        \"name\": \"Status\",\n                        \"columns\": [\n                            { \"height\": 12, \"_id\": 10 },\n                            { \"height\": 18, \"_id\": 20 },\n                            { \"height\": 12, \"_id\": 30 },\n                            { \"height\": 24, \"_id\": 40 }\n                        ]\n                    },\n                    {\n                        \"_id\": 4,\n                        \"name\": \"Detail\",\n                        \"columns\": [\n                            { \"height\": 12, \"_id\": 50 },\n                            { \"height\": 12, \"_id\": 60 },\n                            { \"height\": 18, \"_id\": 70 }\n                        ]\n                    }\n                ]\n            },\n            {\n                \"_id\": 5,\n                \"name\": \"Settings\",\n                \"pages\":[\n                    {\n                        \"_id\": 6,\n                        \"name\": \"Account\",\n                        \"columns\": [\n                            { \"height\": 12, \"_id\": 80 },\n                            { \"height\": 18, \"_id\": 90 },\n                            { \"height\": 24, \"_id\": 100 },\n                            { \"height\": 36, \"_id\": 110 }\n                        ]\n                    },\n                    {\n                        \"_id\": 7,\n                        \"name\": \"Site settings\",\n                        \"columns\": [\n                        { \"height\": 24, \"_id\": 120 },\n                        { \"height\": 24, \"_id\": 130 },\n                        { \"height\": 24, \"_id\": 140 }\n                        ]\n                    }\n                ]\n            }\n        ]\n    },\n    \"mutations\": [\n        {\n            \"menu\": [\n                {\n                    \"_id\": 5,\n                    \"name\": \"Configuration\"\n                }\n            ]\n        },\n        {\n            \"menu\": [\n                {\n                    \"_id\": 2,\n                    \"pages\": [\n                        {\n                            \"_id\": 4,\n                            \"name\": \"Summary\"\n                        }\n                    ]\n                }\n            ]\n        },\n        {\n            \"menu\": [\n                {\n                    \"_id\": 5,\n                    \"pages\": [\n                        {\n                            \"_id\": 6,\n                            \"columns\": [\n                                {\n                                    \"_id\": 110,\n                                    \"height\": 50\n                                }\n                            ]\n                        }\n                    ]\n                }\n            ]\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/statement",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"statement"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
