@@ -59,7 +59,8 @@ function flatten(document, object, path, separator = '.') {
           // Add Statement
           const newPath = [path].filter(Boolean).join(separator);
           return { ...acc, [Action.ADD]: { [newPath]: [object[key]] } };
-        } if (hasDeleteKey(object[key])) {
+        }
+        if (hasDeleteKey(object[key])) {
           // delete Statement
           const newPath = [path, index].filter(Boolean).join(separator);
           return { ...acc, [Action.DELETE]: { [newPath]: object[key][DELETE_KEY] } };
